@@ -26,4 +26,13 @@
 		<param-value>OCWCD Tutorials</param-value>
 	</context-param>
 	
+	<context-param>
+		<param-name>os</param-name>
+		<param-value>Android</param-value>
+	</context-param>
+	
+	<listener>
+		<listener-class>com.sonu.listener.MobileContextListener</listener-class>
+	</listener>
+	
 </web-app>

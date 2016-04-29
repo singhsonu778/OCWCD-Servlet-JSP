@@ -13,7 +13,8 @@
 			}
 			out.println("<br/><br/>Admin Name : " + request.getAttribute("name"));
 			out.println("<br/>Email add : " + request.getAttribute("email"));
-			out.println("<br/>App Name : " + request.getAttribute("app"));						
+			out.println("<br/>App Name : " + request.getAttribute("app"));
+			out.println("<br/>Mobile os: " + application.getAttribute("mobile"));
 		%>
 	</body>
 </html>
