@@ -1,21 +1,16 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
-<web-app xmlns="http://java.sun.com/xml/ns/javaee" 
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee" 
 		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-		 xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
-		 					 http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
-		 version="3.0">
-
-	<display-name>OCWCD</display-name>
-	<description>OCWCD description</description>
-
+	     xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+	     version="2.4">
+	
 	<servlet>
-		<servlet-name>Hello</servlet-name>
-		<servlet-class>HelloServlet</servlet-class>
+		<servlet-name>SelectMobile</servlet-name>
+		<servlet-class>com.sonu.web.MobileSelect</servlet-class>
 	</servlet>
-
+	
 	<servlet-mapping>
-		<servlet-name>Hello</servlet-name>
-		<url-pattern>/hello</url-pattern>
+		<servlet-name>SelectMobile</servlet-name>
+		<url-pattern>/SelectMobile.do</url-pattern>
 	</servlet-mapping>
-
+	
 </web-app>
