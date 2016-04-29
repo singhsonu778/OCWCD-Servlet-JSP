@@ -20,6 +20,9 @@ public class MobileSelect extends HttpServlet {
 		List<String> list = me.getBrands(c);
 
 		request.setAttribute("list", list);
+		request.setAttribute("email", getServletConfig().getInitParameter("adminEmail"));
+		request.setAttribute("name", getServletConfig().getInitParameter("adminName"));
+		request.setAttribute("app", getServletContext().getInitParameter("appName"));
 		RequestDispatcher view = request.getRequestDispatcher("MobileResult.jsp");
 		view.forward(request, response);
 	}

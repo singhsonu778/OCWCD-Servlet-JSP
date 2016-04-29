@@ -6,11 +6,24 @@
 	<servlet>
 		<servlet-name>SelectMobile</servlet-name>
 		<servlet-class>com.sonu.web.MobileSelect</servlet-class>
+		<init-param>
+			<param-name>adminEmail</param-name>
+			<param-value>singhsonu778@gmail.com</param-value>
+		</init-param>
+		<init-param>
+			<param-name>adminName</param-name>
+			<param-value>Sonu Singh</param-value>
+		</init-param>
 	</servlet>
 	
 	<servlet-mapping>
 		<servlet-name>SelectMobile</servlet-name>
 		<url-pattern>/SelectMobile.do</url-pattern>
 	</servlet-mapping>
+
+	<context-param>
+		<param-name>appName</param-name>
+		<param-value>OCWCD Tutorials</param-value>
+	</context-param>
 	
 </web-app>

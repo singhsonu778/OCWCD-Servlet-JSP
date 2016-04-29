@@ -9,8 +9,11 @@
 		<%
 			List<String> list = (List<String>) request.getAttribute("list");
 			for (String li : list) {
-				out.print("<br>try: " + li);
+				out.print("<br/>try: " + li);
 			}
+			out.println("<br/><br/>Admin Name : " + request.getAttribute("name"));
+			out.println("<br/>Email add : " + request.getAttribute("email"));
+			out.println("<br/>App Name : " + request.getAttribute("app"));						
 		%>
 	</body>
 </html>
