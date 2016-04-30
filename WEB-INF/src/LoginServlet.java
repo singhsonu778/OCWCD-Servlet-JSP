@@ -20,7 +20,7 @@ public class LoginServlet extends HttpServlet {
 			HttpSession session = request.getSession();
 			session.setAttribute("user", user);
 			session.setMaxInactiveInterval(3 * 60);
-			response.sendRedirect("LoginSuccess.jsp");
+            response.sendRedirect(response.encodeRedirectURL("LoginSuccess.jsp"));
 		} else {
 			RequestDispatcher rd = request.getRequestDispatcher("login.html");
 			PrintWriter out = response.getWriter();

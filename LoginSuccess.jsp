@@ -12,8 +12,8 @@
 				user = (String) session.getAttribute("user");
 		%>
 		<h3>Hi <%=user%>, Login successful.</h3>
-		<form action="logout" method="POST">
+		<form action="<%=response.encodeURL("logout")%>" method="POST">
 			<input type="submit" value="Logout">
 		</form>
-	</body>
+</body>
 </html>
