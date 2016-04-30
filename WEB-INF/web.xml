@@ -2,5 +2,10 @@
 		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	     xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
 	     version="2.4">
+
+	<context-param>
+		<param-name>email</param-name>
+		<param-value>singhsonu778@gmail.com</param-value>
+	</context-param>
 	
 </web-app>

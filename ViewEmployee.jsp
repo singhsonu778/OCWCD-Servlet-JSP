@@ -12,9 +12,12 @@
 		
 		<!-- get value from bean -->
 		Employee details :<br/>
-		Id : <jsp:getProperty property="id" name="person"/><br/>
-		Name : <jsp:getProperty property="name" name="person"/><br/>
-		Job : <jsp:getProperty property="job" name="person"/><br/>
+		Id : ${person.id}<br/>
+		Name : ${person.name}<br/>
+		Job : ${person.job}<br/>
+		
+		<br/>Displaying parameters values using EL : <br/>
+		${param.id}, ${param.name}, ${param.job}, ${header.host}, ${initParam.email}
 		
 	</body>
 </html>
