@@ -5,18 +5,13 @@
 	</head>
 	<body>
 		<%
-			String userName = null;
-			Cookie[] cookies = request.getCookies();
-			if (cookies != null) {
-				for (Cookie cookie : cookies) {
-					if (cookie.getName().equals("user"))
-						userName = cookie.getValue();
-				}
-			}
-			if (userName == null)
+			String user = null;
+			if (session.getAttribute("user") == null) {
 				response.sendRedirect("login.html");
+			} else
+				user = (String) session.getAttribute("user");
 		%>
-		<h3>Hi <%=userName%>, Login successful.</h3>
+		<h3>Hi <%=user%>, Login successful.</h3>
 		<form action="logout" method="POST">
 			<input type="submit" value="Logout">
 		</form>

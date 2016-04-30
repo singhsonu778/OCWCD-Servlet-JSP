@@ -5,10 +5,10 @@ import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 public class LoginServlet extends HttpServlet {
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
@@ -17,9 +17,9 @@ public class LoginServlet extends HttpServlet {
 		String pwd = request.getParameter("pwd");
 
 		if ("sonu".equals(user) && "singh".equals(pwd)) {
-			Cookie loginCookie = new Cookie("user", user);
-			loginCookie.setMaxAge(5 * 60);
-			response.addCookie(loginCookie);
+			HttpSession session = request.getSession();
+			session.setAttribute("user", user);
+			session.setMaxInactiveInterval(3 * 60);
 			response.sendRedirect("LoginSuccess.jsp");
 		} else {
 			RequestDispatcher rd = request.getRequestDispatcher("login.html");
