@@ -8,9 +8,9 @@
 		<!-- set value in bean -->
 		<jsp:useBean id="person" type="com.sonu.domain.Person" 
 					 class="com.sonu.domain.Employee" scope="request"/>
-		<jsp:setProperty property="id" value="<%= request.getParameter(\"id\") %>" name="person"/>
-		<jsp:setProperty property="name" value="<%= request.getParameter(\"name\") %>" name="person"/>
-		<jsp:setProperty property="job" value="<%= request.getParameter(\"job\") %>" name="person"/>				 
+		<jsp:setProperty property="id" param="id" name="person"/>
+		<jsp:setProperty property="name" param="name" name="person"/>
+		<jsp:setProperty property="job" param="job" name="person"/>				 
 		
 		<!-- get value from bean -->
 		Employee details :<br/>
