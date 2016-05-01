@@ -3,9 +3,4 @@
 	     xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
 	     version="2.4">
 	
-	<error-page>
-		<exception-type>java.lang.Throwable</exception-type>
-		<location>/errorPages/Error.jsp</location>
-	</error-page>
-	
 </web-app>
