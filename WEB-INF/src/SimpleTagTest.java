@@ -7,6 +7,6 @@ import javax.servlet.jsp.tagext.SimpleTagSupport;
 public class SimpleTagTest extends SimpleTagSupport {
 
 	public void doTag() throws JspException, IOException {
-		getJspBody().invoke(null);
+		getJspContext().getOut().write("Simple tag content");
 	}
 }

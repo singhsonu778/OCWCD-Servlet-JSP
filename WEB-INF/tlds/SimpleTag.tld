@@ -12,7 +12,7 @@
 		<description>Simple tag usage demo</description>
 		<name>mySimpleTag</name>
 		<tag-class>com.sonu.domain.SimpleTagTest</tag-class>
-		<body-content>scriptless</body-content>
+		<body-content>empty</body-content>
 	</tag>
 	
 </taglib>

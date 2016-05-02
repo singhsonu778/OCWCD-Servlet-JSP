@@ -5,8 +5,6 @@
 		<link href="favicon.ico" rel="icon" type="image/x-icon" />
 	</head>
 	<body>
-		<mine:mySimpleTag>
-			Some text in body.
-		</mine:mySimpleTag>	
+		<mine:mySimpleTag/>
 	</body>
 </html>
