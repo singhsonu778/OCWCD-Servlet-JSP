@@ -12,7 +12,12 @@
 		<description>Simple tag usage demo</description>
 		<name>mySimpleTag</name>
 		<tag-class>com.sonu.domain.SimpleTagTest</tag-class>
-		<body-content>empty</body-content>
+		<body-content>scriptless</body-content>
+		<attribute>
+			<name>names</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
 	</tag>
 	
 </taglib>

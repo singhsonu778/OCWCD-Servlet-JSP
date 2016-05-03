@@ -5,6 +5,12 @@
 		<link href="favicon.ico" rel="icon" type="image/x-icon" />
 	</head>
 	<body>
-		<mine:mySimpleTag/>
+		<%
+			String[] names = {"Sonu", "Gaurav", "Madhuri"};
+			request.setAttribute("names", names);
+		%>
+		<mine:mySimpleTag names="${requestScope.names}">
+			<p>${name}</p>
+		</mine:mySimpleTag>
 	</body>
 </html>
