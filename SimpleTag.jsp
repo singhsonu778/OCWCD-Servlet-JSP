@@ -9,8 +9,10 @@
 			String[] names = {"Sonu", "Gaurav", "Madhuri"};
 			request.setAttribute("names", names);
 		%>
+		<p>Before throwing an exception</p>
 		<mine:mySimpleTag names="${requestScope.names}">
 			<p>${name}</p>
 		</mine:mySimpleTag>
+		<p>After throwing an exception which will not get printed</p>
 	</body>
 </html>

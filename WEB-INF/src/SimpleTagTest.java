@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.Arrays;
 
 import javax.servlet.jsp.JspException;
+import javax.servlet.jsp.SkipPageException;
 import javax.servlet.jsp.tagext.SimpleTagSupport;
 
 public class SimpleTagTest extends SimpleTagSupport {
@@ -18,6 +19,9 @@ public class SimpleTagTest extends SimpleTagSupport {
 		for (String name : names) {
 			getJspContext().setAttribute("name", name);
 			getJspBody().invoke(null);
+			if(name.equals("Gaurav")){
+				throw new SkipPageException();
+			}
 		}
 	}
 }
