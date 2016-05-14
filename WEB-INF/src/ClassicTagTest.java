@@ -1,29 +1,28 @@
 package com.sonu.domain;
 
-import java.io.IOException;
 import javax.servlet.jsp.JspException;
-import javax.servlet.jsp.JspWriter;
 import javax.servlet.jsp.tagext.TagSupport;
 
 public class ClassicTagTest extends TagSupport {
-	private JspWriter out;
+	String[] names = new String[] { "Sonu", "Madhuri", "Gaurav" };
+	int counter;
 
 	public int doStartTag() throws JspException {
-		out = pageContext.getOut();
-		try {
-			out.println("in doStartTag()");
-		} catch (IOException ex) {
-			throw new JspException("IOException : " + ex.toString());
+		counter = 0;
+		return EVAL_BODY_INCLUDE;
+	}
+
+	public int doAfterBody() throws JspException {
+		if (counter < names.length) {
+			pageContext.setAttribute("name", names[counter]);
+			counter++;
+			return EVAL_BODY_AGAIN;
+		} else {
+			return SKIP_BODY;
 		}
-		return SKIP_BODY;
 	}
 
 	public int doEndTag() throws JspException {
-		try {
-			out.println("<br/>in doEndTag()");
-		} catch (IOException ex) {
-			throw new JspException("IOException : " + ex.toString());
-		}
 		return EVAL_PAGE;
 	}
 }

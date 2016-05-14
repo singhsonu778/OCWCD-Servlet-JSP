@@ -5,6 +5,8 @@
 		<link href="favicon.ico" rel="icon" type="image/x-icon" />
 	</head>
 	<body>
-		<mine:myClassicTag/>
+		<mine:myClassicTag>
+			<p>${name}</p>
+		</mine:myClassicTag>
 	</body>
 </html>

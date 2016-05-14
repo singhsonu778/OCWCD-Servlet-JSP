@@ -12,7 +12,7 @@
 		<description>Classic tag usage demo</description>
 		<name>myClassicTag</name>
 		<tag-class>com.sonu.domain.ClassicTagTest</tag-class>
-		<body-content>empty</body-content>
+		<body-content>scriptless</body-content>
 	</tag>
 	
 </taglib>
