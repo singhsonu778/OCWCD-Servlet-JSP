@@ -7,17 +7,12 @@
 
 	<tlib-version>1.2</tlib-version>
 	<short-name>MyCustomTag</short-name>
-	<uri>simpleTags</uri>
+	<uri>classicTags</uri>
 	<tag>
-		<description>Simple tag usage demo</description>
-		<name>mySimpleTag</name>
-		<tag-class>com.sonu.domain.SimpleTagTest</tag-class>
-		<body-content>scriptless</body-content>
-		<attribute>
-			<name>names</name>
-			<required>true</required>
-			<rtexprvalue>true</rtexprvalue>
-		</attribute>
+		<description>Classic tag usage demo</description>
+		<name>myClassicTag</name>
+		<tag-class>com.sonu.domain.ClassicTagTest</tag-class>
+		<body-content>empty</body-content>
 	</tag>
 	
 </taglib>
