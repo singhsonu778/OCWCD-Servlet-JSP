@@ -1,0 +1,33 @@
+Case 1:
+when we have following code in html or jsp
+
+	<link href="favicon.ico" rel="icon" type="image/x-icon" />
+	
+or following code in servlet
+
+	out.println("<link href=\"favicon.ico\" rel=\"icon\" type=\"image/x-icon\"/>
+	
+and favicon.ico file is missing.
+
+Output: No favicon is seen
+---------------------------------------------------------------------------------------
+Case 2:
+when we have following code in html or jsp
+
+	<link href="favicon.ico" rel="icon" type="image/x-icon" />
+	
+or following code in servlet
+
+	out.println("<link href=\"favicon.ico\" rel=\"icon\" type=\"image/x-icon\"/>
+	
+and favicon.ico file is present.
+
+Output: The favicon is seen
+---------------------------------------------------------------------------------------
+Case 3:
+when we dont have above code
+
+and favicon.ico file is missing/present.
+
+Output: Default favicon is seen i.e tomcat apache's favicon
+----------------------------------------------------------------------------------------

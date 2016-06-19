@@ -1,0 +1,131 @@
+----------------------------------------------------------------------------------------------------------
+HelloWorld Servlet
+----------------------------------------------------------------------------------------------------------
+All class files of servlet will reside in following directory:
+apache-tomcat-7.0.34\webapps\ROOT\WEB-INF\classes
+where as web.xml file will reside in following directory:
+apache-tomcat-7.0.34\webapps\ROOT\WEB-INF
+
+\--Tomcat
+     \--webapps
+          \--project_name
+               \--WEB-INF
+                   \--web.xml
+                   \--classes
+                         \--HelloServlet.class
+			   \hello.jsp
+			   \some.html
+			   \[img,css,etc]
+						 
+Create a HelloWorld servlet as:
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class HelloServlet extends HttpServlet
+{
+	public HelloServlet() {}
+
+	@Override
+	public void init() throws ServletException {}
+	
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+			throws ServletException, IOException {
+		
+		PrintWriter out = resp.getWriter();
+		out.println("Hello World Servlet");
+	}
+
+	@Override
+	public void destroy() {}
+}
+
+Compile above program from 
+apache-tomcat-7.0.34\webapps\ROOT\WEB-INF\classes
+with following command:
+javac -cp .\..\..\..\..\lib\servlet-api.jar HelloWorld.java
+
+Add following entry to web.xml file:
+
+  <servlet>
+    <servlet-name>hello</servlet-name>
+    <servlet-class>HelloWorld</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>hello</servlet-name>
+    <url-pattern>/hello</url-pattern>
+  </servlet-mapping>
+  
+Now start tomcat server by clicking on
+apache-tomcat-7.0.34\bin\startup.bat
+
+In browser hit following url:
+localhost
+Apache tomcat page should appear as response
+
+If server doesn't get started due to any error and prompt window closes immediately then,
+open command prompt from following directory:
+apache-tomcat-7.0.34\bin and run startup.bat
+It will show any error if present
+
+In browser hit following url:
+localhost/hello
+Hello World Servlet should appear as response
+
+To have Welcome file a following entry to web.xml file:
+
+<welcome-file-list> 
+	<welcome-file>index.jsp</welcome-file> 
+	<welcome-file>index.html</welcome-file> 
+</welcome-file-list>
+
+In browser hit following url:
+localhost
+The content of the file appear as response.
+
+In case <welcome-file-list>  is not present then index.html then index.htm then index.jsp if present is used as welcome file. If <welcome-file-list> is present then files in list gets higher priority.
+
+You can also create war file {web archive (war) file contains all the contents of a web application}, and paste it inside the webapps directory. To do so, you need to use jar tool to create the war file. Go inside the project directory (before the WEB-INF), then write:
+
+projectfolder> jar cvf myproject.war *  
+projectfolder> jar -cvf myproject.war *  
+
+Here, -c is used to create file, -v to generate the verbose output and -f to specify the arhive file name.
+The * (asterisk) symbol signifies that all the files of this directory (including sub directory).
+
+To extract the war file, you need to use -x switch of jar tool of JDK.
+jar -xvf projectname.war  
+
+The load-on-startup element of web-app loads the servlet at the time of deployment or server start if value is positive. The 0 value will be loaded first then 1, 2, 3 and so on.
+
+forward() and include() - works at server side...url doesn't get changed...GET or POST depending on original request
+sendRedirect() - client side...url changes...GET method...it uses the url bar of the browser to make another request
+
+The servletconfig object refers to the single servlet whereas servletcontext object refers to the whole web application.
+----------------------------------------------------------------------------------------------------------
+HelloWorld JSP
+----------------------------------------------------------------------------------------------------------
+Create a hello.jsp file 
+
+<html>
+	 <head>
+	    <title>Hello World JSP</title>
+	 </head>
+	 <body>
+	    <%="Hello World JSP" %>
+	 </body>
+</html>
+
+Put above file in following directory:
+apache-tomcat-7.0.34\webapps\ROOT
+
+In browser hit following url:
+localhost/hello.jsp
+Hello World JSP should appear as response
+----------------------------------------------------------------------------------------------------------

@@ -1,0 +1,15 @@
+The include directive:
+
+<%@ include file=”Header.jsp” %>
+The include directive just takes the contents of the “Header.jsp” file and places it into the “Contact.jsp” page BEFORE it does the translation
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+<jsp:include> standard action:
+
+<jsp:include page=”Header.jsp” />
+The <jsp:include /> standard action inserts the RESPONSE of “Header.jsp” at runtime by RequestDispatcher include() method
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+<c:import> custom action:
+<c:import url=”http://www.wickedlysmart.com/skyler/horse.html” />
+It works at request time like <jsp:include>
+Unlike the other two includes, the <c:import> url can be from outside the web conatiner
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

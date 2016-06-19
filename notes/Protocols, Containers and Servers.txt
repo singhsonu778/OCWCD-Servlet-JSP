@@ -1,0 +1,20 @@
+IP - moves packet from one host to another
+TCP - makes sure a file sent ends up as a complete file at destination
+HTTP - has web-specific features and depends upon TCP/IP and work as simple Request/Response sequence
+
+Web server - just takes request and sends response
+Application server - takes request from web server and does processing and provides response to web server
+Web container - manages the execution of web pages, servlets, jsps etc. Web components and their container run on the Web server
+EJB container - manages the execution of EJB
+usually containers (web containers) are part of server (web server)
+
+Servlets don't have main() method bcoz they are under the control of another Java app called Container
+Tomcat - is a container
+Apache - is a web server
+web server hands the request to container then container calls the servlet service() method
+usually web containers are configured to work with a web server
+
+J2EE - is a super specs incorporating other specs including Servlets 2.4 spec and JSP 2.0 spec for web container, but it also includes Enterprise JavaBean 2.1 spec for EJB container
+
+J2EE app server includes both web container and EJB container
+Tomcat - is a web container but not a full J2EE app server

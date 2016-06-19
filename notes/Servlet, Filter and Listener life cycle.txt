@@ -1,0 +1,60 @@
+----------------------------------------------------------------------
+Servlet with Filter
+on loading
+	filter-->init method is called
+
+on first request to servlet
+	servlet-->constructor is called
+	servlet-->init is called
+
+	filter-->doFilter (before) is called
+	servlet-->get/post is called
+	filter-->doFilter (after) is called
+
+on next request to servlet
+	filter-->doFilter (before) is called
+	servlet-->get/post is called
+	filter-->doFilter (after) is called
+
+	servlet-->destroy
+	filter-->destroy	
+----------------------------------------------------------------------
+Servlet with ServletContextListener
+on loading
+	listener-->init method is called
+
+on first request to servlet
+	servlet-->constructor is called
+	servlet-->init is called
+
+	servlet-->get/post is called
+
+on next request to servlet
+	servlet-->get/post is called
+
+	servlet-->destroy
+	listener-->destroy	
+----------------------------------------------------------------------
+Servlet with Filter and ServletContextListener
+The ServletContextEvent is notified when web application is deployed on the server.
+The web container creates the instance of ServletContextEvent after the ServletContext instance.
+on loading
+	listener-->init method is called
+	filter-->init method is called
+
+on first request to servlet
+	servlet-->constructor is called
+	servlet-->init is called
+
+	filter-->doFilter (before) is called
+	servlet-->get/post is called
+	filter-->doFilter (after) is called
+
+on next request to servlet
+	filter-->doFilter (before) is called
+	servlet-->get/post is called
+	filter-->doFilter (after) is called
+
+	servlet-->destroy
+	filter-->destroy	
+	listener-->destroy	
