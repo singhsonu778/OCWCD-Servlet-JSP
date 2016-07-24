@@ -1,0 +1,5 @@
+PUT  - used to update the content only at specified resources, and is idempotent.
+POST - used to handle the data specified in body by specified resource, and in not idempotent. The specified resource might process the data and even perform action at some other resource.
+
+eg. PUT request such as /books/5 will only update data specified in body only at /books/5 location
+eg. POST request such as /books with data in body might create new resource at server and might place content at some other resource such as /books/5
